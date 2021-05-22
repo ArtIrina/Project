@@ -18,7 +18,7 @@ conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
 cursor.execute('''
-CREATE TABLE MoskvaN2 (
+CREATE TABLE Kinoagent (
 Link TEXT,
 Description TEXT,
 Photo TEXT,
@@ -40,7 +40,7 @@ for obj in range(len(info)):
     address = info[obj]['header']
     price = info[obj]['price']
 
-    sql = "INSERT INTO MoskvaN2 (Link, Description, Photo, Address, Price) VALUES  (?, ?, ?, ?, ?)"
+    sql = "INSERT INTO Kinoagent (Link, Description, Photo, Address, Price) VALUES  (?, ?, ?, ?, ?)"
     val = [(link, description, photo, address, price)]
     cursor.executemany(sql, val)
     conn.commit()
