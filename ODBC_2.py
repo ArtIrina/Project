@@ -16,12 +16,13 @@ conn = pyodbc.connect(connection_string)
 # table
 cursor = conn.cursor()
 
+# nvarchar(4000) для правильной кодировки данных
 cursor.execute('''
 CREATE TABLE Kinoagentstvo (
-Link TEXT,
-Description TEXT,
-Photo TEXT,
-Address TEXT,
+Link nvarchar(4000),
+Description nvarchar(4000),
+Photo nvarchar(4000),
+Address nvarchar(4000),
 Price integer,
 );
 ''')
